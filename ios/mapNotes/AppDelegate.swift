@@ -1,7 +1,9 @@
+import GoogleMaps
 import UIKit
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       in: window,
       launchOptions: launchOptions
     )
+   
 
     return true
   }
