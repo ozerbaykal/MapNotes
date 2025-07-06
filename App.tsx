@@ -1,17 +1,29 @@
 import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import MapExample from './mapExample/mapExample'
 
 const App = () => {
+  const [notificationCount, setNotificationCount] = useState(5)
+
   const handleLocationPicker = () => {
     Alert.alert("📍 Location Picker", "Bu özellik PR ile eklendi!")
   }
 
+  const handleNotifications = () => {
+    Alert.alert("🔔 Bildirimler", `${notificationCount} yeni bildiriminiz var!`)
+    setNotificationCount(0)
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Map Notes - Geliştirildi 📍</Text>
+      <Text style={styles.title}>Map Notes - Bildirimler 🔔</Text>
       
-      {/* YENİ FEATURE: Location Picker */}
+      {/* YENİ FEATURE: Notifications */}
+      <TouchableOpacity style={styles.notificationButton} onPress={handleNotifications}>
+        <Text style={styles.buttonText}>🔔 Bildirimler ({notificationCount})</Text>
+      </TouchableOpacity>
+      
+      {/* MEVCUT FEATURE: Location Picker */}
       <TouchableOpacity style={styles.locationButton} onPress={handleLocationPicker}>
         <Text style={styles.buttonText}>📍 Konum Seç</Text>
       </TouchableOpacity>
@@ -26,7 +38,7 @@ export default App
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:"#f0f8ff" // Aqua yerine daha güzel bir renk
+    backgroundColor:"#e8f4f8" // Bildirimler için açık mavi
   },
   title: {
     fontSize: 18,
@@ -34,6 +46,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     color: '#2e3440'
+  },
+  notificationButton: {
+    backgroundColor: '#bf616a',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginHorizontal: 20,
+    marginBottom: 10
   },
   locationButton: {
     backgroundColor: '#4c566a',
