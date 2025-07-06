@@ -5,7 +5,8 @@ import MapExample from './mapExample/mapExample'
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-    <MapExample/>
+      <Text style={styles.title}>Map Notes - Geliştirildi 📍</Text>
+      <MapExample/>
     </SafeAreaView>
   )
 }
@@ -13,9 +14,15 @@ const App = () => {
 export default App
 
 const styles = StyleSheet.create({
-
   container:{
     flex:1,
-    backgroundColor:"aqua "
+    backgroundColor:"#f0f8ff" // Aqua yerine daha güzel bir renk
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 20,
+    color: '#2e3440'
   }
 })
