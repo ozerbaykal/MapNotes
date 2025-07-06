@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Map Notes - Geliştirildi 📍</Text>
+      <Text style={styles.title}>Map Notes - DARK THEME 🌙</Text>
       
       {/* YENİ FEATURE: Location Picker */}
       <TouchableOpacity style={styles.locationButton} onPress={handleLocationPicker}>
@@ -26,14 +26,14 @@ export default App
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:"#f0f8ff" // Aqua yerine daha güzel bir renk
+    backgroundColor:"#2e3440" // Dark theme background
   },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
-    color: '#2e3440'
+    color: '#eceff4' // Light text for dark theme
   },
   locationButton: {
     backgroundColor: '#4c566a',
