@@ -14,11 +14,20 @@ const App = () => {
     setNotificationCount(0)
   }
 
+  const handleSettings = () => {
+    Alert.alert("⚙️ Ayarlar", "Yeni ayarlar özelliği eklendi!")
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Map Notes - Bildirimler 🔔</Text>
+      <Text style={styles.title}>Map Notes - Yeni Özellikler 🚀</Text>
       
-      {/* YENİ FEATURE: Notifications */}
+      {/* YENİ FEATURE: Settings Button */}
+      <TouchableOpacity style={styles.settingsButton} onPress={handleSettings}>
+        <Text style={styles.buttonText}>⚙️ Ayarlar</Text>
+      </TouchableOpacity>
+      
+      {/* MEVCUT FEATURE: Notifications */}
       <TouchableOpacity style={styles.notificationButton} onPress={handleNotifications}>
         <Text style={styles.buttonText}>🔔 Bildirimler ({notificationCount})</Text>
       </TouchableOpacity>
@@ -46,6 +55,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
     color: '#2e3440'
+  },
+  settingsButton: {
+    backgroundColor: '#a3be8c',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 8,
+    marginHorizontal: 20,
+    marginBottom: 10
   },
   notificationButton: {
     backgroundColor: '#bf616a',
